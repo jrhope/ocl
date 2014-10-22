@@ -39,7 +39,7 @@ using RTT::Logger;
     #error "MSGLENGTH too long" /* memcpy is used */
 #endif
 
-#if __APPLE__
+#if __APPLE__ || __VXWORKS__
 #define SEND_OPTIONS        0
 #else
 #define SEND_OPTIONS        MSG_NOSIGNAL
