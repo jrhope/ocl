@@ -153,6 +153,7 @@ int deployerParseCmdLine(int                        argc,
 			return 1;
 		}
 
+#ifndef __VXWORKS__
 		if (vm.count("daemon"))
 		{
 			if (vm.count("check"))
@@ -161,6 +162,7 @@ int deployerParseCmdLine(int                        argc,
 				if (fork() != 0 )
 					return 1;
 		}
+#endif
 
 		if ( !(0 <= minNumberCPU) )
 		{
